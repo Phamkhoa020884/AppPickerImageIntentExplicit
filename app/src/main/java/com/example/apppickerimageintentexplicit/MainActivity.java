@@ -3,11 +3,14 @@ package com.example.apppickerimageintentexplicit;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 
+import java.io.Serializable;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void event() {
+        mImgPick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+//                intent.putExtra("text","Hello");
+                intent.putExtra("arr_drawable",mArrDrawable);
+//
+                startActivity(intent);
+            }
+        });
     }
 
     private void init() {
@@ -64,4 +77,3 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 }
-© 2021 GitHub, Inc.}
